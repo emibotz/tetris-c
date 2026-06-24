@@ -27,16 +27,16 @@ typedef struct {
     arr = NULL;                                     \
 } while (0)
 
-#define arr_delete(arr, from, to) do {                  \
-    ArrayHeader *header = arr_header(arr);              \
-    if (from >= to || from < 0 || to > header->cnt) {   \
-        break;                                          \
-    }                                                   \
-    int i, n = to - from;                               \
-    for (i = from; i < header->cnt-n; i += 1) {         \
-        (arr)[i] = (arr)[to + i - from];                \
-    }                                                   \
-    header->cnt -= n;                                   \
+#define arr_delete(arr, from, to) do {                            \
+    ArrayHeader *header = arr_header(arr);                        \
+    if ((from) >= (to) || (from) < 0 || (to) > header->cnt) {     \
+        break;                                                    \
+    }                                                             \
+    int i, n = (to) - (from);                                     \
+    for (i = (from); i < header->cnt-n; i += 1) {                 \
+        (arr)[i] = (arr)[(to) + i - (from)];                      \
+    }                                                             \
+    header->cnt -= n;                                             \
 } while(0)
 
 /*
