@@ -30,3 +30,5 @@ Block *Game_GetBlock(Game *game, int x, int y);
 Block *Game_GetVisualBlock(Game *game, int x, int y);
 
 int Game_MoveComb(Game *game, Combination *comb, int x, int y);
+
+void Game_CheckControlling(Game *game);

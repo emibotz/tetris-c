@@ -21,7 +21,7 @@ void *Tick(void *arg) {
         moved = Game_MoveComb(game, game->Controlling, 0, 1);
 
         if (!moved) {
-            // TODO: Check for landing, and combine blocks.
+            Game_CheckControlling(game);
         }
 
         pthread_mutex_lock(renderMutex);
